@@ -164,9 +164,9 @@ commands/             /cave-off, /cave-default, /cave-max as plugin slash comman
 scripts/package.sh    builds the release zip and .skill file
 .github/             release workflow; see RELEASING.md for the three-step release routine
 RELEASING.md          how to publish a new version, no terminal required
-LICENSE               MIT
+LICENSE               IndieOps Free License
 ```
 
 ## License
 
-MIT © David Sparrow
+**License:** [IndieOps Free License](LICENSE). Free to use, even commercially; don't redistribute it.

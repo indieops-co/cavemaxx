@@ -11,7 +11,7 @@
       "name": "cavemaxx",
       "source": "./",
       "description": "Teaches Claude to notice when an interface, diagram, calculator or mini-app would serve you better than prose. Modes: /cave-off, /cave-default, /cave-max.",
-      "license": "MIT",
+      "license": "LicenseRef-IndieOps-Free",
       "homepage": "https://github.com/davidsparrow/cavemaxx"
     }
   ]

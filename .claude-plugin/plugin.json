@@ -7,6 +7,6 @@
   },
   "homepage": "https://github.com/davidsparrow/cavemaxx",
   "repository": "https://github.com/davidsparrow/cavemaxx",
-  "license": "MIT",
+  "license": "LicenseRef-IndieOps-Free",
   "keywords": ["claude-skill", "artifacts", "interfaces", "visualization", "dashboards", "mini-apps"]
 }

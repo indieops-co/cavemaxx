@@ -1,7 +1,8 @@
 {
   "name": "cavemaxx",
   "owner": {
-    "name": "David Sparrow"
+    "name": "Dave Biggs",
+    "url": "https://indieops.co"
   },
   "metadata": {
     "description": "CaveMaxx: you already have the app builder. Turn it up."
@@ -10,9 +11,7 @@
     {
       "name": "cavemaxx",
       "source": "./",
-      "description": "Teaches Claude to notice when an interface, diagram, calculator or mini-app would serve you better than prose. Modes: /cave-off, /cave-default, /cave-max.",
-      "license": "MIT",
-      "homepage": "https://github.com/davidsparrow/cavemaxx"
+      "description": "Teaches Claude to notice when an interface, diagram, calculator or mini-app would serve you better than prose. Modes: /cave-off, /cave-default, /cave-max."
     }
   ]
 }

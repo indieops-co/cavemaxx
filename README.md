@@ -169,4 +169,5 @@ LICENSE               IndieOps Free License
 
 ## License
 
-**License:** [IndieOps Free License](LICENSE). Free to use, even commercially; don't redistribute it.
+Copyright © 2026 Dave Biggs. All rights reserved.  
+Licensed under the [IndieOps Free License v1.0](LICENSE). Free to use, even commercially; don't redistribute it.

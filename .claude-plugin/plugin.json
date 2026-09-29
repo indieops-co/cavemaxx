@@ -3,7 +3,7 @@
   "description": "You already have the app builder. Turn it up. CaveMaxx teaches Claude to notice when an interface, diagram, calculator or mini-app would serve you better than prose. Modes: /cave-off, /cave-default, /cave-max.",
   "version": "1.0.2",
   "author": {
-    "name": "David Sparrow"
+    "name": "Dave Biggs"
   },
   "homepage": "https://github.com/davidsparrow/cavemaxx",
   "repository": "https://github.com/davidsparrow/cavemaxx",

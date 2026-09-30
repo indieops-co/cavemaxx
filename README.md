@@ -40,8 +40,8 @@ Full instructions, verification and troubleshooting: **[INSTALL.md](INSTALL.md)*
 | Where | How |
 |---|---|
 | **Claude.ai** | Settings → Skills → upload `cavemaxx.skill` (or the zip) from [Releases](../../releases). |
-| **Claude Code** | `git clone https://github.com/davidsparrow/cavemaxx ~/.claude/skills/cavemaxx`, then restart Claude Code. |
-| **Claude Code plugin** | `/plugin marketplace add davidsparrow/cavemaxx` then `/plugin install cavemaxx@cavemaxx`. |
+| **Claude Code** | `git clone https://github.com/indieops-co/cavemaxx ~/.claude/skills/cavemaxx`, then restart Claude Code. |
+| **Claude Code plugin** | `/plugin marketplace add indieops-co/skilllet-registry` then `/plugin install cavemaxx@indieops-co`. |
 
 One download covers all three: the folder is a valid skill *and* a valid plugin.
 
@@ -164,7 +164,7 @@ commands/             /cave-off, /cave-default, /cave-max as plugin slash comman
 scripts/package.sh    builds the release zip and .skill file
 .github/             release workflow; see RELEASING.md for the three-step release routine
 RELEASING.md          how to publish a new version, no terminal required
-LICENSE               IndieOps Free License
+LICENSE               IndieOps Free License v1.0
 ```
 
 ## License

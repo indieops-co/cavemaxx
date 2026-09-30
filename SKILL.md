@@ -8,7 +8,7 @@ description: >-
   "cave max", "visual mode off/default/high", "artifacts on/off", mentions CaveMaxx by name,
   asks which CaveMaxx commands exist, or asks Claude to build more and explain less. These
   commands mean nothing without this skill, so always load it when you see one.
-license: IndieOps Free License (see LICENSE)
+license: IndieOps Free License v1.0 - see LICENSE
 ---
 
 # CaveMaxx

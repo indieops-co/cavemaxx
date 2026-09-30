@@ -19,7 +19,7 @@ Custom skills need a plan that allows them; if you don't see a Skills section, t
 Nothing to run. One folder in one place.
 
 ```bash
-git clone https://github.com/davidsparrow/cavemaxx ~/.claude/skills/cavemaxx
+git clone https://github.com/indieops-co/cavemaxx ~/.claude/skills/cavemaxx
 ```
 
 Or unzip the download and move the `cavemaxx` folder into:
@@ -38,8 +38,8 @@ project instead.
 For real slash commands with tab completion:
 
 ```
-/plugin marketplace add davidsparrow/cavemaxx
-/plugin install cavemaxx@cavemaxx
+/plugin marketplace add indieops-co/skilllet-registry
+/plugin install cavemaxx@indieops-co
 ```
 
 To try it without installing, point Claude Code at the folder for one session:

@@ -8,9 +8,9 @@
 ## Install
 
 - **Claude.ai**: Settings → Skills → upload `cavemaxx.skill` (or the zip).
-- **Claude Code**: unzip and move the `cavemaxx` folder into `~/.claude/skills/`, or `git clone https://github.com/davidsparrow/cavemaxx ~/.claude/skills/cavemaxx`.
-- **Claude Code plugin**: `/plugin marketplace add davidsparrow/cavemaxx` then `/plugin install cavemaxx@cavemaxx`.
+- **Claude Code**: unzip and move the `cavemaxx` folder into `~/.claude/skills/`, or `git clone https://github.com/indieops-co/cavemaxx ~/.claude/skills/cavemaxx`.
+- **Claude Code plugin**: `/plugin marketplace add indieops-co/skilllet-registry` then `/plugin install cavemaxx@indieops-co`.
 
-Then type `/cave-max`. Full details in [INSTALL.md](https://github.com/davidsparrow/cavemaxx/blob/main/INSTALL.md).
+Then type `/cave-max`. Full details in [INSTALL.md](https://github.com/indieops-co/cavemaxx/blob/main/INSTALL.md).
 
 Both attached files have identical contents; `.skill` is the extension Claude.ai shows for skills.

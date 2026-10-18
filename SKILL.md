@@ -1,16 +1,6 @@
 ---
 name: cavemaxx
-description: >-
-  CaveMaxx turns Claude's app builder up. It controls how readily Claude answers with an
-  interface (an HTML artifact, diagram, calculator, comparison matrix, dashboard, planner or
-  mini-app) instead of prose. Use when the user types any /cave- command (/cave-off,
-  /cave-default, /cave-max, or a variant spelling of one), says "cave off", "cave max",
-  "visual mode off/default/high", "artifacts on/off", mentions CaveMaxx by name, asks which
-  CaveMaxx commands exist, or asks Claude to build more and explain less. These commands mean
-  nothing without this skill, so always load it when you see one. Not for deciding how an
-  interface should look (a design, diagramming or data-visualisation skill does that), for
-  hosting or publishing what gets built, or for making prose shorter (the caveman skill does
-  that).
+description: "CaveMaxx turns Claude's app builder up. It controls how readily Claude answers with an interface (an HTML artifact, diagram, calculator, comparison matrix, dashboard, planner or mini-app) instead of prose. Use when the user types any /cave- command (/cave-off, /cave-default, /cave-max, or a variant spelling of one), says \"cave off\", \"cave max\", \"visual mode off/default/high\", \"artifacts on/off\", mentions CaveMaxx by name, asks which CaveMaxx commands exist, or asks Claude to build more and explain less. These commands mean nothing without this skill, so always load it when you see one. Not for deciding how an interface should look (a design, diagramming or data-visualisation skill does that), for hosting or publishing what gets built, or for making prose shorter (the caveman skill does that)."
 license: IndieOps Free License v1.0 - see LICENSE
 ---
 

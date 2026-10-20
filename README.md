@@ -2,6 +2,16 @@
 
 **You already have the app builder. Turn it up.**
 
+*An IndieOps Skilllet — a copyable skill folder that does one job properly.* · [indieops.co](https://indieops.co)
+
+**Works with** Claude  
+**Needs** Claude Code, or a Claude plan with custom skills
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/demo-dark.gif">
+  <img src="docs/demo.gif" width="960" alt="The same pricing question asked twice: stock Claude answers with six paragraphs, then /cave-max is typed and Claude answers with a small pricing simulator with sliders and one line of recommendation.">
+</picture>
+
 Claude sometimes talks when it should build. CaveMaxx changes that.
 
 CaveMaxx is a free, tiny Claude Skill (a *Skilllet*) that changes one thing: how readily
@@ -171,3 +181,7 @@ LICENSE               IndieOps Free License v1.0
 
 Copyright © 2026 Dave Biggs. All rights reserved.  
 Licensed under the [IndieOps Free License v1.0](LICENSE). Free to use, even commercially; don't redistribute it.
+
+---
+
+**More Skilllets and plugins:** [indieops.co/skills-and-plugins](https://indieops.co/skills-and-plugins) · **Questions?** [support@indieops.co](mailto:support@indieops.co)

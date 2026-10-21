@@ -9,6 +9,7 @@
   "homepage": "https://indieops.co/skills/cavemaxx",
   "repository": "https://github.com/indieops-co/cavemaxx",
   "license": "IndieOps Free License v1.0",
+  "skills": ["./", "./aliases/"],
   "keywords": [
     "claude-skill",
     "artifacts",

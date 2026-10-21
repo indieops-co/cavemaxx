@@ -5,12 +5,12 @@
 Put the `cavemaxx` folder in `~/.claude/skills/` (or upload the zip on claude.ai under **Settings → Capabilities → Skills**), open a chat, and type:
 
 ```
-/cave-max
+cavemaxx max
 ```
 
-Claude answers with one line:
+Claude answers with one status line:
 
-> CaveMaxx: max. Interfaces when they beat prose.
+> CaveMaxx is ON: max. Interfaces when they beat prose. Type default, maxx or off to change.
 
 Then ask it something worth building:
 
@@ -35,7 +35,7 @@ That is the whole idea. Claude already knows how to build interfaces. CaveMaxx t
 
 A mode lasts for the rest of the conversation. New chat, new choice: nothing changes until you set one, so installing CaveMaxx is safe. In a Claude Project, put `/cave-max` in the project instructions and every chat there starts turned up.
 
-Typing `/cavemaxx` on its own, or saying "use CaveMaxx", counts as `/cave-max`, because that is what someone reaching for it wants.
+Or skip the slash, which works in every install: `cavemaxx off`, `cavemaxx default`, `cavemaxx max`, or `cavemax` on its own for max. Saying "use CaveMaxx" counts as max too, because that is what someone reaching for it wants. Every switch comes back with a status line saying where CaveMaxx is and how to change it, and from then on the mode word alone (`off`, `default`, `max`) is enough.
 
 ---
 
@@ -118,9 +118,9 @@ One download covers all three. Install it one way, not two.
 |---|---|
 | **Claude.ai** (web, desktop, mobile) | Settings → Capabilities → Skills → upload the zip. Needs a plan that allows custom skills. |
 | **Claude Code, as a skill** | Put the `cavemaxx` folder in `~/.claude/skills/` (Windows: `C:\Users\<you>\.claude\skills\`), then restart Claude Code or run `/reload-plugins`. For one project only, use `.claude/skills/cavemaxx/` inside it. |
-| **Claude Code, as a plugin** | `/plugin marketplace add indieops-co/skilllet-registry` then `/plugin install cavemaxx@indieops-co`. Commands then appear as `/cavemaxx:cave-max` and so on. |
+| **Claude Code, as a plugin** | `/plugin marketplace add indieops-co/skilllet-registry` then `/plugin install cavemaxx@indieops-co`. Commands then appear as `/cavemaxx:cave-max` and so on, or skip the slash: `cavemaxx max`. |
 
-**Check it worked:** type `/cave-max` and look for the mode line. If nothing happens: the path must be exactly `…/skills/cavemaxx/SKILL.md` (a nested `cavemaxx/cavemaxx/` is the usual unzip mistake); restart Claude Code; on an older Claude Code that rejects unknown slash commands, say *use CaveMaxx* in words or use the plugin's `/cavemaxx:cave-max`.
+**Check it worked:** type `cavemaxx max` and look for the status line. If nothing happens: the path must be exactly `…/skills/cavemaxx/SKILL.md` (a nested `cavemaxx/cavemaxx/` is the usual unzip mistake); restart Claude Code; or say *use CaveMaxx* in words. In Claude Code, the hyphenated `/cave-max` runs only as the plugin's `/cavemaxx:cave-max`, because Claude Code runs only the slash commands it has registered.
 
 **Updating:** replace the folder (or `git pull` inside it) and restart. **Removing:** delete the folder. CaveMaxx keeps no files, state or data of its own.
 

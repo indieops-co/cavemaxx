@@ -10,7 +10,7 @@ plugin, and a Claude.ai upload. Pick the one that matches where you use Claude.
 1. Download `cavemaxx.skill` (or `cavemaxx-<version>.zip`, same contents) from the
    [Releases](../../releases) page. The repo's green **Code → Download ZIP** works as well.
 2. In Claude.ai open **Settings**, find **Skills** (under Capabilities), and upload the file.
-3. Open a chat and type `/cave-max`.
+3. Open a chat and type `cavemaxx max`.
 
 Custom skills need a plan that allows them; if you don't see a Skills section, that is why.
 
@@ -33,6 +33,10 @@ You should end up with `~/.claude/skills/cavemaxx/SKILL.md`. Restart Claude Code
 Prefer it in one project only? Put the folder at `.claude/skills/cavemaxx/` inside that
 project instead.
 
+Installed this way, skip the slash: type `cavemaxx max`, `cavemaxx off` or `cavemaxx default`.
+`/cavemaxx max` works too; the hyphenated `/cave-max` does not, because Claude Code runs only
+the slash commands it has registered.
+
 ## Claude Code, as a plugin
 
 For real slash commands with tab completion:
@@ -49,7 +53,8 @@ claude --plugin-dir ~/Downloads/cavemaxx
 ```
 
 Plugin commands are namespaced by Claude Code, so they appear as `/cavemaxx:cave-off`,
-`/cavemaxx:cave-default` and `/cavemaxx:cave-max`.
+`/cavemaxx:cave-default` and `/cavemaxx:cave-max`. Or skip the slash and the prefix:
+`cavemaxx max`, `cavemaxx off`, `cavemaxx default`, and `cavemax` on its own for max.
 
 Install it one way, not two.
 
@@ -60,12 +65,12 @@ Install it one way, not two.
 Type:
 
 ```
-/cave-max
+cavemaxx max
 ```
 
-You should get back:
+You should get back a status line:
 
-> CaveMaxx: max. Interfaces when they beat prose.
+> CaveMaxx is ON: max. Interfaces when they beat prose. Type default, maxx or off to change.
 
 Then ask it something worth building: *"Help me decide whether to charge $29, $49 or $79."*
 
@@ -75,9 +80,9 @@ Then ask it something worth building: *"Help me decide whether to charge $29, $4
 |---|---|
 | Is the path exactly `~/.claude/skills/cavemaxx/SKILL.md`? | A nested folder (`cavemaxx/cavemaxx/`) is the most common unzip mistake. Move the inner folder up. |
 | Did you restart Claude Code? | Restart, or run `/reload-plugins`. |
-| Does `/cave-max` say "Unknown command"? | Current Claude Code passes unrecognised slash commands to Claude, and CaveMaxx catches them. Older versions reject them: use `/cavemaxx max` (the skill with an argument) or the plugin's `/cavemaxx:cave-max` instead. |
+| Does `/cave-max` say "Unknown command", or does Claude say it isn't a command? | Claude Code runs only the slash commands it has registered. Type `cavemaxx max` with no slash; it works in every install. |
 | On Claude.ai, did the upload succeed? | The zip must contain a single folder with `SKILL.md` directly inside it. |
-| Still stuck? | Say *"use CaveMaxx"* in plain words. If Claude answers with the mode line, the skill is installed and only the command routing is off. |
+| Still stuck? | Say *"use CaveMaxx"* in plain words. If Claude answers with the status line, the skill is installed and only the command routing is off. |
 
 ---
 
@@ -87,11 +92,15 @@ The three modes, in plain language or as commands:
 
 | | |
 |---|---|
-| `/cave-off` · *cave off* | Text and Markdown unless you explicitly ask for an interface. |
-| `/cave-default` · *cave default* | Stock Claude. The reset. |
-| `/cave-max` · *cave max* | Interfaces whenever they beat prose. |
+| `cavemaxx off` · `/cave-off` · *cave off* | Text and Markdown unless you explicitly ask for an interface. |
+| `cavemaxx default` · `/cave-default` · *cave default* | Stock Claude. The reset. |
+| `cavemaxx max` · `/cave-max` · *cave max* | Interfaces whenever they beat prose. |
 
-A mode lasts for the rest of the conversation. New conversation, start again with `/cave-max`,
+`cavemax` on its own is max too. Every switch comes back with a status line saying where
+CaveMaxx is and how to change it, and from then on the mode word alone (`off`, `default`, `max`)
+is enough.
+
+A mode lasts for the rest of the conversation. New conversation, start again with `cavemaxx max`,
 or put `/cave-max` in a Claude Project's instructions so every chat there starts turned up.
 
 Mid-task, CaveMaxx may ask once:

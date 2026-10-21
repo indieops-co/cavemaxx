@@ -19,8 +19,11 @@ trap 'rm -rf "$STAGE"' EXIT
 mkdir -p "$STAGE/cavemaxx" "$ROOT/dist"
 
 # Copy everything except .git, dist, OS cruft, and what never ships to a user: the guide's
-# Markdown source, the IndieOps release script and its output, and the release notes.
-(cd "$ROOT" && tar --exclude=.git --exclude=.github --exclude=dist --exclude=assets/source --exclude=release --exclude=guide.md --exclude=make-release.sh --exclude=RELEASING.md --exclude='.DS_Store' --exclude='__pycache__' -cf - .) \
+# Markdown source, the IndieOps release script and its output, and the release notes. The
+# aliases/ folder is left out too: it holds the plugin's /cavemax short form as a second
+# SKILL.md, and this package must hold exactly one. A plugin loaded from this package simply
+# has no /cavemax; /cavemaxx still works, and plugin.json's missing ./aliases/ is ignored.
+(cd "$ROOT" && tar --exclude=.git --exclude=.github --exclude=dist --exclude=assets/source --exclude=aliases --exclude=release --exclude=guide.md --exclude=make-release.sh --exclude=RELEASING.md --exclude='.DS_Store' --exclude='__pycache__' -cf - .) \
   | (cd "$STAGE/cavemaxx" && tar -xf -)
 
 # Sanity checks: exactly one SKILL.md, frontmatter present.

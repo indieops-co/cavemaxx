@@ -2,7 +2,7 @@
 
 **You already have the app builder. Turn it up.**
 
-*An IndieOps Skilllet — a copyable skill folder that does one job properly.* · [indieops.co](https://indieops.co)
+*Skilllet. Fine-tuned Agentic superpowers.* · [indieops.co](https://indieops.co)
 
 **Works with** Claude  
 **Needs** Claude Code, or a Claude plan with custom skills

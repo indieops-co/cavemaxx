@@ -2,7 +2,7 @@
 
 ## Start here
 
-Put the `cavemaxx` folder in `~/.claude/skills/` (or upload the zip on claude.ai under **Settings → Capabilities → Skills**), open a chat, and type:
+Put the `cavemaxx` folder in `~/.claude/skills/` (or upload the zip on claude.ai under **Customize → Skills**), open a chat, and type:
 
 ```
 cavemaxx max
@@ -116,7 +116,7 @@ One download covers all three. Install it one way, not two.
 
 | Where | How |
 |---|---|
-| **Claude.ai** (web, desktop, mobile) | Settings → Capabilities → Skills → upload the zip. Needs a plan that allows custom skills. |
+| **Claude.ai** (web, desktop, mobile) | Customize → Skills → **+** → Create skill → Upload a skill, then choose the zip from Releases. Needs a Pro, Max, Team or Enterprise plan, with Code execution and file creation on (Settings → Capabilities). |
 | **Claude Code, as a skill** | Put the `cavemaxx` folder in `~/.claude/skills/` (Windows: `C:\Users\<you>\.claude\skills\`), then restart Claude Code or run `/reload-plugins`. For one project only, use `.claude/skills/cavemaxx/` inside it. |
 | **Claude Code, as a plugin** | `/plugin marketplace add indieops-co/skilllet-registry` then `/plugin install cavemaxx@indieops-co`. Commands then appear as `/cavemaxx:cave-max` and so on, or skip the slash: `cavemaxx max`. |
 

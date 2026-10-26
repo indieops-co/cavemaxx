@@ -7,12 +7,16 @@ plugin, and a Claude.ai upload. Pick the one that matches where you use Claude.
 
 ## Claude.ai (web, desktop, mobile)
 
-1. Download `cavemaxx.skill` (or `cavemaxx-<version>.zip`, same contents) from the
-   [Releases](../../releases) page. The repo's green **Code → Download ZIP** works as well.
-2. In Claude.ai open **Settings**, find **Skills** (under Capabilities), and upload the file.
+1. Download `cavemaxx-<version>.zip` from the [Releases](../../releases) page. Use that zip, not
+   GitHub's green **Code → Download ZIP**, whose folder is named `cavemaxx-main`.
+2. In Claude.ai open **Customize → Skills**, click **+**, then **+ Create skill → Upload a skill**,
+   and choose the zip.
 3. Open a chat and type `cavemaxx max`.
 
-Custom skills need a plan that allows them; if you don't see a Skills section, that is why.
+Skills run in Claude's code sandbox, so **Code execution and file creation** must be on, under
+**Settings → Capabilities**. Custom skills need a Pro, Max, Team or Enterprise plan, and on Team
+and Enterprise an Owner may have to turn skills on first. If you don't see Skills under
+Customize, that is why.
 
 ## Claude Code, as a skill (recommended)
 
@@ -81,7 +85,7 @@ Then ask it something worth building: *"Help me decide whether to charge $29, $4
 | Is the path exactly `~/.claude/skills/cavemaxx/SKILL.md`? | A nested folder (`cavemaxx/cavemaxx/`) is the most common unzip mistake. Move the inner folder up. |
 | Did you restart Claude Code? | Restart, or run `/reload-plugins`. |
 | Does `/cave-max` say "Unknown command", or does Claude say it isn't a command? | Claude Code runs only the slash commands it has registered. Type `cavemaxx max` with no slash; it works in every install. |
-| On Claude.ai, did the upload succeed? | The zip must contain a single folder with `SKILL.md` directly inside it. |
+| On Claude.ai, did the upload succeed? | The zip must contain a single folder named `cavemaxx` with `SKILL.md` directly inside it, and **Code execution and file creation** must be on. |
 | Still stuck? | Say *"use CaveMaxx"* in plain words. If Claude answers with the status line, the skill is installed and only the command routing is off. |
 
 ---

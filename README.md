@@ -49,7 +49,7 @@ Full instructions, verification and troubleshooting: **[INSTALL.md](INSTALL.md)*
 
 | Where | How |
 |---|---|
-| **Claude.ai** | Settings → Skills → upload `cavemaxx.skill` (or the zip) from [Releases](../../releases). |
+| **Claude.ai** | Customize → Skills → **+** → Create skill → Upload a skill, with the zip from [Releases](../../releases). Needs Code execution and file creation on (Settings → Capabilities). |
 | **Claude Code** | `git clone https://github.com/indieops-co/cavemaxx ~/.claude/skills/cavemaxx`, then restart Claude Code. |
 | **Claude Code plugin** | `/plugin marketplace add indieops-co/skilllet-registry` then `/plugin install cavemaxx@indieops-co`. |
 

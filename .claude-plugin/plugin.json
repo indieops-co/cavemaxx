@@ -1,14 +1,15 @@
 {
   "name": "cavemaxx",
-  "description": "You already have the app builder. Turn it up. CaveMaxx teaches Claude to notice when an interface, diagram, calculator or mini-app would serve you better than prose. Modes: /cave-off, /cave-default, /cave-max.",
+  "description": "You already have the app builder. Turn it up. CaveMaxx teaches Claude to notice when an interface, diagram, calculator or mini-app would serve you better than prose. Modes: cavemaxx off, cavemaxx default, cavemaxx max, no slash needed.",
   "version": "1.0.2",
   "author": {
-    "name": "Dave Biggs",
+    "name": "IndieOps",
     "url": "https://indieops.co"
   },
   "homepage": "https://indieops.co/skills/cavemaxx",
   "repository": "https://github.com/indieops-co/cavemaxx",
   "license": "IndieOps Free License v1.0",
+  "skills": ["./", "./aliases/"],
   "keywords": [
     "claude-skill",
     "artifacts",

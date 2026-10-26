@@ -80,6 +80,13 @@
   p{margin:0 0 1.15em}
   a{color:var(--accent-ink);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
   a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+  /* links in the guide body wear the hummingbird underline (BRAND.md "The HTML guide"): bold ink over a
+     2px strip of the six band colours, thickening to 4px on hover. Same as .link on indieops.co. */
+  main a{color:var(--ink);font-weight:700;text-decoration:none;padding-bottom:2px;
+    background:linear-gradient(90deg,#FF6FA3,#F0A800,#2A8FEA,#00CF6A,#B10EBB,#8A7BFF) 0 100%/100% 2px no-repeat;
+    transition:background-size .15s}
+  main a:hover{background-size:100% 4px}
+  main a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
   strong{font-weight:600}
   ul,ol{margin:0 0 1.3em;padding-left:1.25em}
   li{margin-bottom:.5em}
@@ -180,10 +187,10 @@
 
   <main>
 <h2>Start here</h2>
-<p>Put the <code>cavemaxx</code> folder in <code>~/.claude/skills/</code> (or upload the zip on claude.ai under <strong>Settings → Capabilities → Skills</strong>), open a chat, and type:</p>
-<pre><code>/cave-max</code></pre>
-<p>Claude answers with one line:</p>
-<blockquote><p>CaveMaxx: max. Interfaces when they beat prose.</p></blockquote>
+<p>Put the <code>cavemaxx</code> folder in <code>~/.claude/skills/</code> (or upload the zip on claude.ai under <strong>Customize → Skills</strong>), open a chat, and type:</p>
+<pre><code>cavemaxx max</code></pre>
+<p>Claude answers with one status line:</p>
+<blockquote><p>CaveMaxx is ON: max. Interfaces when they beat prose. Type default, maxx or off to change.</p></blockquote>
 <p>Then ask it something worth building:</p>
 <pre><code>Help me decide whether my SaaS should charge $29, $49 or $79.
 400 customers, 8% growth, 4% churn.</code></pre>
@@ -193,7 +200,7 @@
 <h2>The three modes</h2>
 <div class="scroll"><table><thead><tr><th>Command</th><th>Say it in words</th><th>What changes</th></tr></thead><tbody><tr><td><code>/cave-off</code></td><td><em>cave off</em> · <em>artifacts off</em></td><td>Text and Markdown. Claude builds an interface only when you explicitly ask. Good for quick answers and anything you'll paste somewhere else.</td></tr><tr><td><code>/cave-default</code></td><td><em>cave default</em> · <em>cave reset</em></td><td>Stock Claude. CaveMaxx stops applying its preferences. The reset.</td></tr><tr><td><code>/cave-max</code></td><td><em>cave max</em> · <em>artifacts on</em></td><td>Claude actively looks for the moment an interface would serve you better than prose, and builds it.</td></tr></tbody></table></div>
 <p>A mode lasts for the rest of the conversation. New chat, new choice: nothing changes until you set one, so installing CaveMaxx is safe. In a Claude Project, put <code>/cave-max</code> in the project instructions and every chat there starts turned up.</p>
-<p>Typing <code>/cavemaxx</code> on its own, or saying "use CaveMaxx", counts as <code>/cave-max</code>, because that is what someone reaching for it wants.</p>
+<p>Or skip the slash, which works in every install: <code>cavemaxx off</code>, <code>cavemaxx default</code>, <code>cavemaxx max</code>, or <code>cavemax</code> on its own for max. Saying "use CaveMaxx" counts as max too, because that is what someone reaching for it wants. Every switch comes back with a status line saying where CaveMaxx is and how to change it, and from then on the mode word alone (<code>off</code>, <code>default</code>, <code>max</code>) is enough.</p>
 <hr>
 <h2>What <code>/cave-max</code> actually decides</h2>
 <p>Before answering, Claude asks itself what you will <em>do</em> with the answer.</p>
@@ -224,8 +231,8 @@
 <hr>
 <h2>Where to install it</h2>
 <p>One download covers all three. Install it one way, not two.</p>
-<div class="scroll"><table><thead><tr><th>Where</th><th>How</th></tr></thead><tbody><tr><td><strong>Claude.ai</strong> (web, desktop, mobile)</td><td>Settings → Capabilities → Skills → upload the zip. Needs a plan that allows custom skills.</td></tr><tr><td><strong>Claude Code, as a skill</strong></td><td>Put the <code>cavemaxx</code> folder in <code>~/.claude/skills/</code> (Windows: <code>C:\Users\&lt;you&gt;\.claude\skills\</code>), then restart Claude Code or run <code>/reload-plugins</code>. For one project only, use <code>.claude/skills/cavemaxx/</code> inside it.</td></tr><tr><td><strong>Claude Code, as a plugin</strong></td><td><code>/plugin marketplace add indieops-co/skilllet-registry</code> then <code>/plugin install cavemaxx@indieops-co</code>. Commands then appear as <code>/cavemaxx:cave-max</code> and so on.</td></tr></tbody></table></div>
-<p><strong>Check it worked:</strong> type <code>/cave-max</code> and look for the mode line. If nothing happens: the path must be exactly <code>…/skills/cavemaxx/SKILL.md</code> (a nested <code>cavemaxx/cavemaxx/</code> is the usual unzip mistake); restart Claude Code; on an older Claude Code that rejects unknown slash commands, say <em>use CaveMaxx</em> in words or use the plugin's <code>/cavemaxx:cave-max</code>.</p>
+<div class="scroll"><table><thead><tr><th>Where</th><th>How</th></tr></thead><tbody><tr><td><strong>Claude.ai</strong> (web, desktop, mobile)</td><td>Customize → Skills → <strong>+</strong> → Create skill → Upload a skill, then choose the zip from Releases. Needs a Pro, Max, Team or Enterprise plan, with Code execution and file creation on (Settings → Capabilities).</td></tr><tr><td><strong>Claude Code, as a skill</strong></td><td>Put the <code>cavemaxx</code> folder in <code>~/.claude/skills/</code> (Windows: <code>C:\Users\&lt;you&gt;\.claude\skills\</code>), then restart Claude Code or run <code>/reload-plugins</code>. For one project only, use <code>.claude/skills/cavemaxx/</code> inside it.</td></tr><tr><td><strong>Claude Code, as a plugin</strong></td><td><code>/plugin marketplace add indieops-co/skilllet-registry</code> then <code>/plugin install cavemaxx@indieops-co</code>. Commands then appear as <code>/cavemaxx:cave-max</code> and so on, or skip the slash: <code>cavemaxx max</code>.</td></tr></tbody></table></div>
+<p><strong>Check it worked:</strong> type <code>cavemaxx max</code> and look for the status line. If nothing happens: the path must be exactly <code>…/skills/cavemaxx/SKILL.md</code> (a nested <code>cavemaxx/cavemaxx/</code> is the usual unzip mistake); restart Claude Code; or say <em>use CaveMaxx</em> in words. In Claude Code, the hyphenated <code>/cave-max</code> runs only as the plugin's <code>/cavemaxx:cave-max</code>, because Claude Code runs only the slash commands it has registered.</p>
 <p><strong>Updating:</strong> replace the folder (or <code>git pull</code> inside it) and restart. <strong>Removing:</strong> delete the folder. CaveMaxx keeps no files, state or data of its own.</p>
 <hr>
 <h2>Test it yourself</h2>
@@ -263,7 +270,7 @@
           <span class="pick-name">Shared Profiles</span>
           <span class="pick-problem">Our other Skilllets reference this for your and your clients' profiles &amp; preferences.</span>
           
-          <span class="pick-runs" role="img" aria-label="Runs on macOS, Windows, Linux. Works with Claude."><svg aria-hidden="true"><title>macOS</title><use href="#io-i-macos"/></svg><svg aria-hidden="true"><title>Windows</title><use href="#io-i-windows"/></svg><svg aria-hidden="true"><title>Linux</title><use href="#io-i-linux"/></svg><i></i><svg aria-hidden="true"><title>Claude</title><use href="#io-i-claude"/></svg></span>
+          <span class="pick-runs" role="img" aria-label="Runs on macOS 10.15+, Windows 10+, Linux (glibc 2.28+). Works with Claude."><svg aria-hidden="true"><title>macOS 10.15+</title><use href="#io-i-macos"/></svg><svg aria-hidden="true"><title>Windows 10+</title><use href="#io-i-windows"/></svg><svg aria-hidden="true"><title>Linux (glibc 2.28+)</title><use href="#io-i-linux"/></svg><i></i><svg aria-hidden="true"><title>Claude</title><use href="#io-i-claude"/></svg></span>
         </a></div>
       </div>
       <div class="pick-group">
@@ -364,6 +371,13 @@
           <span class="pick-problem">Everyone's talking about Ruflo, RuVector and agent swarms, and you can't tell which of it your project actually needs.</span>
           
           <span class="pick-runs" role="img" aria-label="Runs on macOS, Windows, Linux. Works with Claude."><svg aria-hidden="true"><title>macOS</title><use href="#io-i-macos"/></svg><svg aria-hidden="true"><title>Windows</title><use href="#io-i-windows"/></svg><svg aria-hidden="true"><title>Linux</title><use href="#io-i-linux"/></svg><i></i><svg aria-hidden="true"><title>Claude</title><use href="#io-i-claude"/></svg></span>
+        </a>
+        <a class="pick" href="https://indieops.co/skills/qangel">
+          <span class="pick-top"><span class="pick-id">2026-27</span><span class="pick-kind">Skill</span></span>
+          <span class="pick-name">QAngel</span>
+          <span class="pick-problem">Claude says it tested your app, and you can't see what it actually checked.</span>
+          
+          <span class="pick-runs" role="img" aria-label="Runs on macOS 10.15+, Windows 10+, Linux (glibc 2.28+). Works with Claude."><svg aria-hidden="true"><title>macOS 10.15+</title><use href="#io-i-macos"/></svg><svg aria-hidden="true"><title>Windows 10+</title><use href="#io-i-windows"/></svg><svg aria-hidden="true"><title>Linux (glibc 2.28+)</title><use href="#io-i-linux"/></svg><i></i><svg aria-hidden="true"><title>Claude</title><use href="#io-i-claude"/></svg></span>
         </a></div>
       </div>
       <div class="pick-group">
@@ -433,7 +447,7 @@
      on a locked-down network, or the year the site moves, an iframe is a blank
      rectangle in the middle of the page. This fails invisibly instead. */
   (function () {
-    var KNOWN = ["2026-01","2026-02","2026-03","2026-04","2026-05","2026-06","2026-07","2026-08","2026-09","2026-10","2026-12","2026-13","2026-14","2026-15","2026-17","2026-18","2026-19","2026-20","2026-22","2026-16"];
+    var KNOWN = ["2026-01","2026-02","2026-03","2026-04","2026-05","2026-06","2026-07","2026-08","2026-09","2026-10","2026-12","2026-13","2026-14","2026-15","2026-17","2026-18","2026-19","2026-20","2026-22","2026-27","2026-16"];
     var URLS = ["https://indieops.co/catalogue.json","https://raw.githubusercontent.com/indieops-co/skilllet-registry/main/catalogue.json"];
     var BASE = "https://indieops.co/skills";
     var KINDS = {"skill":"Skill","plugin":"Plugin","app":"App"};

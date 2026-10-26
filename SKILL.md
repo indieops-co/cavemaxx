@@ -1,6 +1,6 @@
 ---
 name: cavemaxx
-description: "CaveMaxx turns Claude's app builder up. It controls how readily Claude answers with an interface (an HTML artifact, diagram, calculator, comparison matrix, dashboard, planner or mini-app) instead of prose. Use when the user types any /cave- command (/cave-off, /cave-default, /cave-max, or a variant spelling of one), says \"cave off\", \"cave max\", \"visual mode off/default/high\", \"artifacts on/off\", mentions CaveMaxx by name, asks which CaveMaxx commands exist, or asks Claude to build more and explain less. These commands mean nothing without this skill, so always load it when you see one. Not for deciding how an interface should look (a design, diagramming or data-visualisation skill does that), for hosting or publishing what gets built, or for making prose shorter (the caveman skill does that)."
+description: "CaveMaxx sets how readily Claude builds an interface (artifact, diagram, calculator, dashboard, mini-app) instead of prose. Use when a message starts with cavemaxx or cavemax. Also use when either has a slash in front, the user types any /cave- command (/cave-off, /cave-default, /cave-max, or a variant spelling of one), says \"cave off\", \"cave max\", \"visual mode off/default/high\", \"artifacts on/off\", mentions CaveMaxx by name, asks which CaveMaxx commands exist, or asks Claude to build more and explain less. These commands mean nothing without this skill, so always load it when you see one. Not for deciding how an interface should look (a design, diagramming or data-visualisation skill does that), for hosting or publishing what gets built, or for making prose shorter (the caveman skill does that)."
 license: IndieOps Free License v1.0 - see LICENSE
 ---
 
@@ -18,34 +18,51 @@ Three public modes. A mode persists for the rest of the conversation until the u
 
 | Command | Also accepted | Behaviour |
 |---|---|---|
-| `/cave-off` | cave off · artifacts off · visual mode off | Strongly prefer text and Markdown. Build an interface only when the user explicitly asks for one. |
-| `/cave-default` | cave default · cave reset · visual mode default | Stop applying CaveMaxx preferences. Stock Claude behaviour. The reset. |
-| `/cave-max` | cave max · cave on · artifacts on · visual mode high | Actively look for the moment an interface would serve the user better than prose, and build it. |
+| `/cave-off` | cavemaxx off · cave off · artifacts off · visual mode off | Strongly prefer text and Markdown. Build an interface only when the user explicitly asks for one. |
+| `/cave-default` | cavemaxx default · cave default · cave reset · visual mode default | Stop applying CaveMaxx preferences. Stock Claude behaviour. The reset. |
+| `/cave-max` | cavemax · cavemaxx max · cave max · cave on · artifacts on · visual mode high | Actively look for the moment an interface would serve the user better than prose, and build it. |
 
-**Starting mode is `/cave-default`.** Nothing changes until the user asks. Invoking CaveMaxx by
-name with no mode (`/cavemaxx`, "use CaveMaxx", "cavemaxx: compare these") counts as `/cave-max`,
-because that is what someone reaching for it wants.
+**Starting mode is `/cave-default`.** Nothing changes until the user asks. Asking for CaveMaxx by
+name in words ("use CaveMaxx", "CaveMaxx this") counts as `/cave-max`, because that is what
+someone reaching for it wants.
 
-Commands may arrive as real slash commands, as arguments (`/cavemaxx off`), or as plain text in
-a message. Treat them all the same. A command alone means "switch and wait". A command followed
-by a request means "switch, then handle this".
+**The short commands drop the hyphen and need no slash.** `cavemax` is `/cave-max`, and
+`cavemaxx` is `/cave-maxx`, the mode in "One more X": the same pair without the hyphen. A mode
+word right after either one picks that mode instead, and anything after the mode word is the
+request: `cavemaxx off`, `cavemaxx default`, `cavemaxx max`, `cavemaxx maxx`. A `cave-` or `-` in
+front of the mode word changes nothing, and a slash in front of the command changes nothing.
 
-### Acknowledging a switch
+**Once CaveMaxx is in the conversation, a mode word on its own switches.** A message that is only
+`off`, `default`, `max` or `maxx`, with or without a leading `-` or `cave-`, is a command. A mode
+word inside a longer message is just a word.
 
-Confirm a mode change in one short line, then do the work. Do not explain the philosophy.
+Commands may arrive as real slash commands (`/cavemaxx off`, `/cavemaxx:cave-max`), as plain
+text, or as arguments. Treat them all the same. A command alone means "switch and wait". A
+command followed by a request means "switch, then handle this".
 
-- `CaveMaxx: max. Interfaces when they beat prose.`
-- `CaveMaxx: off. Text only unless you ask.`
-- `CaveMaxx: default. Stock behaviour restored.`
+### The status line
+
+Confirm every switch with one status line, then do the work. It says where CaveMaxx is now and
+how to change it, naming the other modes as single words, since those work from here on. Do not
+explain the philosophy.
+
+- `CaveMaxx is OFF. Text only unless you ask. Type default, max or maxx to turn it on.`
+- `CaveMaxx is ON: default. Stock Claude. Type max, maxx or off to change.`
+- `CaveMaxx is ON: max. Interfaces when they beat prose. Type default, maxx or off to change.`
+
+True Caveman Mode has its own status line, in its own voice (see "One more X").
 
 ### Help
 
 If the user asks what CaveMaxx commands exist, list exactly three: `/cave-off`, `/cave-default`,
-`/cave-max`, one line each. That is the whole public command list.
+`/cave-max`, one line each. Then one more line: `cavemaxx off`, `cavemaxx default` and
+`cavemaxx max` do the same with no slash, and once CaveMaxx is on, the mode word alone is enough.
+That is the whole public command list.
 
-If they ask whether there is a hidden or secret command, don't lie and don't reveal it. Something
-like: *"CaveMaxx may contain undocumented behaviour. Exploring is allowed."* If they name a
-command themselves, respond to that command.
+`maxx` appears in the status line and nowhere else. If they ask what it does, don't explain it;
+something like *"Try it."* If they ask whether there is a hidden or secret command, don't lie and
+don't reveal it. Something like: *"CaveMaxx may contain undocumented behaviour. Exploring is
+allowed."* If they name a command themselves, respond to that command.
 
 ## `/cave-off`
 
@@ -233,15 +250,19 @@ intact.
 ## One more X
 
 `/cave-maxx`, two x's, is not a typo. It is True Caveman Mode. It is undocumented on purpose:
-it is meant to be found by someone who mistyped `/cave-max`, and the discovery is the joke.
-Never list it, hint at it, or explain it unless the user names it or asks directly what
-happened. If they ask, tell them plainly and mention that `/cave-max` returns to normal.
+it is meant to be found by someone who typed `cavemaxx` for the product's name, mistyped `max`,
+or wondered what the `maxx` in the status line does, and the discovery is the joke. `/cave-maxx`,
+`cavemaxx` on its own, `cavemaxx maxx` and a bare `maxx` all enter it. The status line names
+`maxx` and nothing more: never list it in help, hint at what it does, or explain it unless the
+user asks directly what happened. If they ask, tell them plainly and mention that `max` returns
+to normal.
 
 ### Entering
 
-Do not announce it. No "True Caveman Mode activated", no explanation, no mode line. Start
-behaving differently and let the output be the reveal. If the command arrives alone, reply with
-one short line in the new voice, for example `𐂂 FIRE LIT. BRING PROBLEM.`, and wait.
+Do not announce it. No "True Caveman Mode activated", no explanation. Start behaving differently
+and let the output be the reveal. The status line speaks the new voice and keeps the way out
+exact, for example `𐂂 FIRE LIT. BRING PROBLEM. SAY max, default OR off TO LEAVE CAVE.` If the
+command arrives alone, that line is the whole reply; wait.
 
 ### Philosophy
 
@@ -326,5 +347,6 @@ bit wherever clarity matters.
 
 ### Leaving
 
-`/cave-max`, `/cave-default` or `/cave-off` exits immediately and cleanly into that mode. One
-tiny joke on the way out is allowed, *"Civilisation restored."*, and only sometimes.
+Any other mode, in any form (`/cave-max`, `cavemaxx max`, or `max` alone), exits immediately and
+cleanly into that mode, with its ordinary status line. One tiny joke on the way out is allowed,
+*"Civilisation restored."*, and only sometimes.

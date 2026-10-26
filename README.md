@@ -49,15 +49,15 @@ Full instructions, verification and troubleshooting: **[INSTALL.md](INSTALL.md)*
 
 | Where | How |
 |---|---|
-| **Claude.ai** | Settings → Skills → upload `cavemaxx.skill` (or the zip) from [Releases](../../releases). |
+| **Claude.ai** | Customize → Skills → **+** → Create skill → Upload a skill, with the zip from [Releases](../../releases). Needs Code execution and file creation on (Settings → Capabilities). |
 | **Claude Code** | `git clone https://github.com/indieops-co/cavemaxx ~/.claude/skills/cavemaxx`, then restart Claude Code. |
 | **Claude Code plugin** | `/plugin marketplace add indieops-co/skilllet-registry` then `/plugin install cavemaxx@indieops-co`. |
 
 One download covers all three: the folder is a valid skill *and* a valid plugin.
 
-Check it worked: type `/cave-max`. Claude replies
+Check it worked: type `cavemaxx max`. Claude replies with a status line
 
-> CaveMaxx: max. Interfaces when they beat prose.
+> CaveMaxx is ON: max. Interfaces when they beat prose. Type default, maxx or off to change.
 
 ## Commands
 
@@ -68,6 +68,8 @@ Check it worked: type `/cave-max`. Claude replies
 | `/cave-max` | Claude actively looks for the moment an interface would serve you better than prose, and builds it. |
 
 Plain language works too: *cave off*, *cave default*, *cave max*, *visual mode off / default / high*.
+Or skip the slash, which works in every install: `cavemaxx off`, `cavemaxx default`,
+`cavemaxx max`, or `cavemax` on its own for max. After that, the mode word alone is enough.
 A mode sticks for the rest of the conversation. Nothing changes until you set one, so
 installing CaveMaxx is safe.
 
@@ -170,6 +172,7 @@ examples/             same prompt under each mode: pricing, comparison, diagram,
 evals/benchmark.md    the test prompt set and scorecard
 assets/               small SVG marks Claude inlines into generated cards
 commands/             /cave-off, /cave-default, /cave-max as plugin slash commands
+aliases/              /cavemax, the one-x short form, for the plugin (not in the Claude.ai package)
 .claude-plugin/       plugin.json and marketplace.json, so the folder installs as a plugin
 scripts/package.sh    builds the release zip and .skill file
 .github/             release workflow; see RELEASING.md for the three-step release routine
@@ -179,7 +182,7 @@ LICENSE               IndieOps Free License v1.0
 
 ## License
 
-Copyright © 2026 Dave Biggs. All rights reserved.  
+Copyright © 2026 IndieOps. All rights reserved.  
 Licensed under the [IndieOps Free License v1.0](LICENSE). Free to use, even commercially; don't redistribute it.
 
 ---

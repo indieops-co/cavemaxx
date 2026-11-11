@@ -75,6 +75,7 @@ Pushing any tag whose name starts with `v` triggers the same robot automatically
 ## What the two files are
 
 `cavemaxx-<version>.zip` and `cavemaxx.skill` have identical contents: one folder named
-`cavemaxx` with `SKILL.md` inside. The `.skill` extension is what Claude.ai shows for skills;
-the `.zip` is for people who want to unzip it into `~/.claude/skills/`. The README's
-install instructions point at both.
+`cavemaxx` with `SKILL.md` inside. They are the zip `make-release.sh` builds for Gumroad, under
+the two names this page uses, so both downloads are the same product. The `.skill` extension
+is what Claude.ai shows for skills; the `.zip` is for people who want to unzip it into
+`~/.claude/skills/`. The README's install instructions point at both.

@@ -18,12 +18,17 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 VERSION="$(sed -n 's/.*"version": *"\([^"]*\)".*/\1/p' "$ROOT/.claude-plugin/plugin.json" | head -1)"
 [ -n "$VERSION" ] || { echo "could not read version from .claude-plugin/plugin.json" >&2; exit 1; }
 
-bash "$ROOT/make-release.sh"
-BUILT="$(ls -t "$ROOT"/release/*-v"$VERSION".zip 2>/dev/null | head -1 || true)"
+# make-release.sh names the folder inside the zip after the folder it runs in, so run it from a
+# copy called cavemaxx. A clone called src, or a worktree, then still ships cavemaxx/.
+WORK="$(mktemp -d)"
+trap 'rm -rf "$WORK"' EXIT
+rsync -a --exclude=/dist --exclude=/release "$ROOT/" "$WORK/cavemaxx/"
+bash "$WORK/cavemaxx/make-release.sh"
+BUILT="$(ls "$WORK"/cavemaxx/release/*-v"$VERSION".zip 2>/dev/null | head -1 || true)"
 [ -n "$BUILT" ] || { echo "make-release.sh built no zip for v$VERSION" >&2; exit 1; }
 
-CHECK="$(mktemp -d)"
-trap 'rm -rf "$CHECK"' EXIT
+CHECK="$WORK/check"
+mkdir "$CHECK"
 unzip -q "$BUILT" -d "$CHECK"
 
 # Sanity checks: one folder named cavemaxx, exactly one SKILL.md (Claude.ai takes one skill per

@@ -171,10 +171,9 @@ examples/             same prompt under each mode: pricing, comparison, diagram,
                       plus one real generated pricing simulator
 evals/benchmark.md    the test prompt set and scorecard
 assets/               small SVG marks Claude inlines into generated cards
-commands/             /cave-off, /cave-default, /cave-max as plugin slash commands
-aliases/              /cavemax, the one-x short form, for the plugin (not in the Claude.ai package)
+commands/             /cave-off, /cave-default, /cave-max and /cavemax as plugin slash commands
 .claude-plugin/       plugin.json and marketplace.json, so the folder installs as a plugin
-scripts/package.sh    builds the release zip and .skill file
+scripts/package.sh    builds the release zip and .skill file from make-release.sh's zip
 .github/             release workflow; see RELEASING.md for the three-step release routine
 RELEASING.md          how to publish a new version, no terminal required
 LICENSE               IndieOps Free License v1.0

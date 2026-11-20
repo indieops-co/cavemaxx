@@ -9,7 +9,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/demo-dark.gif">
-  <img src="docs/demo.gif" width="960" alt="The same pricing question asked twice: stock Claude answers with six paragraphs, then /cave-max is typed and Claude answers with a small pricing simulator with sliders and one line of recommendation.">
+  <img src="docs/demo.gif" width="960" alt="The same pricing question asked twice: stock Claude answers with six paragraphs, then cavemaxx max is typed and Claude answers with a small pricing simulator, three prices side by side and one line of recommendation. Pressing its High price-sensitivity button moves Best from $79 to $29, and Low moves it back.">
 </picture>
 
 Claude sometimes talks when it should build. CaveMaxx changes that.
